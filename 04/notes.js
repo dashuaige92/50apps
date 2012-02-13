@@ -34,13 +34,12 @@ function loadNotes() {
                 })
                 .append($('<textarea>', {
                     text: notes[i].content
-                }))
-                .on('change', function() {
+                }));
+            $this.find('textarea').on('change', function() {
                     var $this = $(this);
-                    console.log($this);
                     $this.text($this.attr('value'));
                     saveNotes();
-                });;
+                });
         }
     };
     return notes;
